@@ -1,2 +1,12 @@
 # Meal-Prep-App
-A meal prep app that gets you recipes and nutrition values so you can get to your healthiest living.
+
+## Description
+  Look up ideas along side a drink.
+
+## User Story
+
+## Technologies used 
+
+## ScreenShots
+
+##
