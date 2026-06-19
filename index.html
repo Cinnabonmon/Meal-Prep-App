@@ -4,32 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assests/CSS/output.css">
+  <link rel="stylesheet" href="./assests/CSS/styles.css">
   <title>Document</title>
 </head>
 <body>
   <header>
-    <h1 class="text-4xl">My Meal Prep App</h1>
+    <nav>
+      <div class="text-2xl text-center p-4">My Meal Prep App</div>
+    </nav>
   </header>
+  <!-- search area -->
+  <section class="search-main">
+  <h2 class="text-center text-3xl">Find your favourite meals</h2>
+  <!-- search form -->
+  <div class="flex justify-center p-5">
+      <form class="">
+      <input class="form-control border p-1" type="text" placeholder="Search">
+      <button class="bg-sky-500 hover:bg-sky-700 rounded-md p-1">Find Recipe</button>
+      </form>
+  </div>
+  </section>
+ 
+  <!-- main area where recipes will be displayed -->
   <main>
-    <section>*Search Box
+    <!-- <section>*Search Box
       <label for="mealSearch">Search Meals:</label>
       <input type="text" id="mealSearch" name="mealSearch" class="border">
-      <button>Random Meal</button>
-    </section>
+      <button class="bg-sky-500 hover:bg-sky-700 ...">Save changes</button>
+    </section> -->
 
-    <section class="flex w-[80%] h-75 border">Meal Card Container
+    <!-- <section class="flex w-[80%] h-75 border">Meal Card Container
       <div class="meal-card w-36 h-48 relative border">
         <div class="w-full h-full bg-blue-600" id="meal-front backface-hidden">meal</div>
         <div class="w-full h-full absolute bg-green-300 top-0 left-0 backface-hidden z-[-1]" id="meal-back">nutrients</div>
       </div>
-    </section>
+    </section> -->
     
-    <div>Saved Meals</div>
+    <!-- <div>Saved Meals</div> -->
   </main>
 
-  <footer>
+  <!-- <footer>
     <p>&copy; 2026 My Meal Prep App. All rights reserved.</p>
     <p>Project Contributors: Justin, John, Jack, Luke</p>
-  </footer>
+  </footer> -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
 </body>
 </html>
