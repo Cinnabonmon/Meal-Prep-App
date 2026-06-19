@@ -24,21 +24,10 @@
   transform: rotateY(180deg);
 }
 
-@import "tailwindcss";
 
 :root {
-    --color-darkblue: #113F67;
-    --color-mdblue: #38598B;
-    --color-ltpurple: #A2A8D3;
 }
 
-header{
-    background-color: bisque;
-}
-
-.search-area{
-    background-color: aqua;
-}
 
 
 
