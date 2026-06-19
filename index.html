@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/CSS/output.css">
+  <link rel="stylesheet" href="./assets/CSS/styles.css">
   <title>Document</title>
 </head>
 <body>
@@ -20,9 +20,11 @@
     </nav>
 
     <section class="flex w-[80%] h-75 border">Meal Card Container
-      <div class="meal-card w-36 h-48 relative border">
-        <div class="w-full h-full bg-blue-600" id="meal-front">meal</div>
-        <div class="w-full h-full absolute bg-green-300 top-0 left-0 z-[-1]" id="meal-back">nutrients</div>
+      <div class="transform-3d w-40">
+        <div class="meal-card w-36 h-48 relative border transition-transform duration-1000 perspective-midrange">
+          <div class="w-full h-full absolute inset-0 bg-blue-600" id="meal-front">meal</div>
+          <div class="w-full h-full absolute inset-0 bg-green-300 top-0 left-0 z-[-1]" id="meal-back">nutrients</div>
+        </div>
       </div>
     </section>
     
@@ -33,5 +35,6 @@
     <p>&copy; 2026 My Meal Prep App. All rights reserved.</p>
     <p>Project Contributors: Justin, John, Jack, Luke</p>
   </footer>
+  <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
