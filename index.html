@@ -1,5 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/CSS/styles.css" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: "#e7eaf6",
+              primary: "#38598b",
+              secondary: "#a2a8d3",
+              dark: "#113f67",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="flex w-full flex-col items-center gap-10 bg-background">
+    <header class="w-full">
+      <h1 class="text-5xl text-center font-['Tangerine'] font-bold">
+        Meal Prep App
+      </h1>
+    </header>
+    <main>
+      <nav>
+        *Search Box
+        <form>
+          <label for="mealSearch">Search Meals:</label>
+          <input type="text" id="mealSearch" name="mealSearch" class="border" />
+          <button type="submit">Random Meal</button>
+        </form>
+      </nav>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,13 +78,32 @@
     
     <!-- <div>Saved Meals</div> -->
   </main>
+      <section class="flex w-[80%] h-75 border">
+        Meal Card Container
+        <div class="meal-card-container w-40">
+          <div class="meal-card w-full h-48 relative border">
+            <div
+              class="meal-front w-full h-full absolute inset-0 bg-blue-600 flex items-center justify-center text-white font-bold"
+              id="meal-front"
+            >
+              meal
+            </div>
+            <div
+              class="meal-back w-full h-full absolute inset-0 bg-green-300 flex items-center justify-center text-gray-900 font-bold"
+              id="meal-back"
+            >
+              nutrients
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <!-- <footer>
-    <p>&copy; 2026 My Meal Prep App. All rights reserved.</p>
-    <p>Project Contributors: Justin, John, Jack, Luke</p>
-  </footer> -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
-</body>
+      <div>Saved Meals</div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 My Meal Prep App. All rights reserved.</p>
+      <p>Project Contributors: Justin, John, Jack, Luke</p>
+    </footer>
+  </body>
 </html>
