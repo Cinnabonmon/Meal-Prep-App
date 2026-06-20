@@ -22,3 +22,13 @@
   transform: rotateY(180deg);
 }
 
+img {
+  width: 150px;
+  object-fit: cover;
+  height: 150px;
+}
+ ol {
+  list-style: decimal;
+  padding-left: 20px;
+ }
+

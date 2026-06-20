@@ -23,7 +23,7 @@
                 Meal Prep App
             </h1>
         </header>
-        <main class="flex items-center flex-col">
+        <main class="flex items-center flex-col md:w-1/2">
             <!-- search area -->
             <section id="search-main">
                 <h2 class="text-center text-4xl font-tangerine font-bold">Find your favourite meals</h2>
@@ -56,20 +56,18 @@
             </section>
 
             <!-- meal card container -->
-            <section class="flex w-full h-75 **:rounded-[2rem]">
+            <section class="flex w-full h-[30rem] **:rounded-[2rem] hidden" id="mealCardContainer">
                 <div class="meal-card-wrapper w-full">
                     <div class="meal-card w-full h-full relative">
                         <div
-                            class="p-4 meal-front w-full h-full absolute inset-0 bg-blue-600 flex items-center justify-center text-white font-bold"
+                            class="flex items-center flex-col p-4 meal-front w-full h-full absolute inset-0 bg-blue-600 text-white font-bold"
                             id="meal-front"
                         >
-                            meal
                         </div>
                         <div
-                            class="p-4 meal-back w-full h-full absolute inset-0 bg-green-300 flex items-center justify-center text-gray-900 font-bold"
+                            class="flex items-start flex-col overflow-scroll scrollbar-none p-4 meal-back w-full h-full absolute inset-0 bg-green-300 text-gray-900 font-bold"
                             id="meal-back"
                         >
-                            nutrients
                         </div>
                     </div>
                 </div>
