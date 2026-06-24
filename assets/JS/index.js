@@ -13,13 +13,13 @@ const mealFront = $("#meal-front");
 const mealBack = $("#meal-back");
 
 //API Call Function
-function fetchMealByName(mealName) {
-  console.log(mealdbUrl + mealName);
+function fetchMealByName(mealURL) {
+  console.log(mealURL);
 
-  fetch(mealdbUrl + mealName)
+  fetch(mealURL)
     .then((response) => {
       if (!response.ok) {
-        console.log(mealdbUrl + mealName);
+        console.log(mealURL);
         throw new Error("Network response was not ok " + response.status);
       }
       return response.json();
@@ -66,47 +66,49 @@ function fetchMealByName(mealName) {
     });
 }
 
-function fetchRandomMeal() {
-  fetch(mealdbRandomUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok" + response.status);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // console.log(data);
-      if (!data || !data.meals || data.meals.length === 0) {
-        console.log("No meals found for the random meal request");
-        return;
-      }
-      //create meal elements
-      const meal = data.meals[0];
-      const $mealPicture = $("<img>").attr("src", meal.strMealThumb);
-      const $mealName = $("<div>").text(meal.strMeal);
-      const $mealInstructions = $("<div>").text(meal.strInstructions);
-      //append meal elements to the card
-      mealFront.append($mealPicture);
-      mealFront.append($mealPicture).append($mealName);
-      mealBack.append($mealInstructions);
-    })
-    .catch((error) => {
-      console.error("Error fetching meal:", error);
-    });
-}
+// function fetchRandomMeal() {
+//   fetch(mealdbRandomUrl)
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error("Network response was not ok" + response.status);
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       // console.log(data);
+//       if (!data || !data.meals || data.meals.length === 0) {
+//         console.log("No meals found for the random meal request");
+//         return;
+//       }
+//       //create meal elements
+//       const meal = data.meals[0];
+//       const $mealPicture = $("<img>").attr("src", meal.strMealThumb);
+//       const $mealName = $("<div>").text(meal.strMeal);
+//       const $mealInstructions = $("<div>").text(meal.strInstructions);
+//       //append meal elements to the card
+//       mealFront.append($mealPicture);
+//       mealFront.append($mealPicture).append($mealName);
+//       mealBack.append($mealInstructions);
+//     })
+//     .catch((error) => {
+//       console.error("Error fetching meal:", error);
+//     });
+// }
 
 //Event Listeners
 findRecipeBtn.on("click", (e) => {
+  e.stopPropagation();
   e.preventDefault();
   const mealName = $("#searchInput").val();
   //console.log(mealName);
   if (mealName) {
-    fetchMealByName(mealName);
+    fetchMealByName(mealdbUrl + mealName);
   }
 });
 
 randomRecipeBtn.on("click", (e) => {
   e.stopPropagation();
-  fetchRandomMeal();
+  e.preventDefault();
+  fetchMealByName(mealdbRandomUrl);
 });
 
