@@ -7,10 +7,15 @@
 .meal-card {
   transform-style: preserve-3d;
   transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.meal-card.flipped {
+  transform: rotateY(180deg);
 }
 
 .meal-card-wrapper:hover .meal-card {
-  transform: rotateY(180deg);
+  transform: rotateY(0deg);
 }
 
 .meal-front,
@@ -23,12 +28,11 @@
 }
 
 img {
-  width: 150px;
+  width: 250px;
   object-fit: cover;
-  height: 150px;
 }
- ol {
-  list-style: decimal;
-  padding-left: 20px;
- }
 
+ul {
+  list-style: dot;
+  padding-left: 20px;
+}
