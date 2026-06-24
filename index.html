@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/CSS/styles.css" />
-    <title>Document</title>
+    <title>Meal Prep App - Find and Save Your Favorite Recipes</title>
     <script
       src="https://code.jquery.com/jquery-4.0.0.js"
       integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
@@ -19,17 +19,45 @@
         --color-background: #e7eaf6;
         --font-tangerine: "Tangerine", cursive;
       }
+      
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      
+      .sr-only.focus:not-sr-only {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        margin: 0;
+        padding: 10px 15px;
+        background-color: #38598b;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body
     class="flex w-full flex-col items-center justify-center gap-5 bg-background p-4"
   >
+    <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
     <header class="w-full">
       <h1 class="text-5xl text-center font-tangerine font-bold">
         Meal Prep App
       </h1>
     </header>
-    <main class="flex items-center flex-col md:w-1/2">
+    <main class="flex items-center flex-col md:w-1/2" id="main-content">
       <!-- search area -->
       <section id="search-main">
         <h2 class="text-center text-4xl font-tangerine font-bold">
@@ -37,25 +65,29 @@
         </h2>
         <!-- search form -->
         <div class="flex justify-center p-5">
-          <form id="mealSearchForm" class="flex items-center flex-col gap-2">
+          <form id="mealSearchForm" class="flex items-center flex-col gap-2" role="search">
+            <label for="searchInput" class="sr-only">Search for recipes</label>
             <input
               class="form-control border p-1 rounded-2xl"
               id="searchInput"
               type="text"
               placeholder="Search"
+              aria-label="Search for recipes"
             />
             <div>
               <button
                 type="submit"
                 class="bg-secondary hover:opacity-50 rounded-md p-1"
                 id="findRecipeBtn"
+                aria-label="Find recipe based on search input"
               >
                 Find Recipe
               </button>
               <button
-                type="submit"
+                type="button"
                 class="bg-secondary hover:opacity-50 rounded-md p-1"
                 id="randomRecipeBtn"
+                aria-label="Get a random recipe"
               >
                 Random Recipe
               </button>
@@ -68,28 +100,34 @@
       <section
         class="flex flex-col sm:flex-row gap-5 w-full h-[50rem] sm:h-[30rem] **:rounded-[2rem] hidden"
         id="mealCardContainer"
+        aria-live="polite"
+        aria-label="Recipe results"
       >
-        <div id="mealContainer" class="h-full meal-card-wrapper w-full">
+        <div id="mealContainer" class="h-full meal-card-wrapper w-full" role="region" aria-label="Meal Recipe Card">
           <div class="meal-card w-full h-full relative">
             <div
               class="flex items-center flex-col p-4 meal-front w-full h-full absolute inset-0 bg-primary text-white font-bold"
               id="meal-front"
+              tabindex="0"
             ></div>
             <div
               class="flex items-start flex-col overflow-scroll scrollbar-none p-4 meal-back w-full h-full absolute inset-0 bg-primary text-gray-900 font-bold"
               id="meal-back"
+              tabindex="0"
             ></div>
           </div>
         </div>
-        <div id="cockTailContainer" class="h-full meal-card-wrapper w-full">
+        <div id="cockTailContainer" class="h-full meal-card-wrapper w-full" role="region" aria-label="Cocktail Recipe Card">
           <div class="meal-card w-full h-full relative">
             <div
               class="flex items-center flex-col p-4 meal-front w-full h-full absolute inset-0 bg-primary text-white font-bold"
               id="cockTailFront"
+              tabindex="0"
             ></div>
             <div
               class="flex items-start flex-col overflow-scroll scrollbar-none p-4 meal-back w-full h-full absolute inset-0 bg-primary text-gray-900 font-bold"
               id="cockTailBack"
+              tabindex="0"
             ></div>
           </div>
         </div>
