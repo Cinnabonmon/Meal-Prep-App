@@ -1,85 +1,95 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./assets/CSS/styles.css" />
-        <title>Document</title>
-        <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <style type="text/tailwindcss">
-            @theme{
-                --color-primary: #38598b;
-                --color-secondary: #a2a8d3;
-                --color-dark: #113f67;
-                --color-background: #e7eaf6;
-                --font-tangerine: 'Tangerine', cursive;
-            }
-        </style>
-    </head>
-    <body class="flex w-full flex-col items-center justify-center gap-5 bg-background p-4">
-        <header class="w-full">
-            <h1 class="text-5xl text-center font-tangerine font-bold">
-                Meal Prep App
-            </h1>
-        </header>
-        <main class="flex items-center flex-col md:w-1/2">
-            <!-- search area -->
-            <section id="search-main">
-                <h2 class="text-center text-4xl font-tangerine font-bold">Find your favourite meals</h2>
-                <!-- search form -->
-                <div class="flex justify-center p-5">
-                    <form id="mealSearchForm" class="flex items-center flex-col gap-2">
-                        <input
-                            class="form-control border p-1 rounded-2xl"
-                            id="searchInput"
-                            type="text"
-                            placeholder="Search"
-                        />
-                        <div>
-                            <button
-                                type="submit"
-                                class="bg-secondary hover:opacity-50 rounded-md p-1"
-                                id="findRecipeBtn"
-                            >
-                                Find Recipe
-                            </button>
-                            <button
-                                type="submit"
-                                class="bg-secondary hover:opacity-50 rounded-md p-1"
-                                id="randomRecipeBtn"
-                            >Random Recipe
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/CSS/styles.css" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.js"
+      integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-primary: #38598b;
+        --color-secondary: #a2a8d3;
+        --color-dark: #113f67;
+        --color-background: #e7eaf6;
+        --font-tangerine: "Tangerine", cursive;
+      }
+    </style>
+  </head>
+  <body
+    class="flex w-full flex-col items-center justify-center gap-5 bg-background p-4"
+  >
+    <header class="w-full">
+      <h1 class="text-5xl text-center font-tangerine font-bold">
+        Meal Prep App
+      </h1>
+    </header>
+    <main class="flex items-center flex-col md:w-1/2">
+      <!-- search area -->
+      <section id="search-main">
+        <h2 class="text-center text-4xl font-tangerine font-bold">
+          Find your favorite meals
+        </h2>
+        <!-- search form -->
+        <div class="flex justify-center p-5">
+          <form id="mealSearchForm" class="flex items-center flex-col gap-2">
+            <input
+              class="form-control border p-1 rounded-2xl"
+              id="searchInput"
+              type="text"
+              placeholder="Search"
+            />
+            <div>
+              <button
+                type="submit"
+                class="bg-secondary hover:opacity-50 rounded-md p-1"
+                id="findRecipeBtn"
+              >
+                Find Recipe
+              </button>
+              <button
+                type="submit"
+                class="bg-secondary hover:opacity-50 rounded-md p-1"
+                id="randomRecipeBtn"
+              >
+                Random Recipe
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
 
-            <!-- meal card container -->
-            <section class="flex w-full h-[30rem] **:rounded-[2rem] hidden" id="mealCardContainer">
-                <div class="meal-card-wrapper w-full">
-                    <div class="meal-card w-full h-full relative">
-                        <div
-                            class="flex items-center flex-col p-4 meal-front w-full h-full absolute inset-0 bg-blue-600 text-white font-bold"
-                            id="meal-front"
-                        >
-                        </div>
-                        <div
-                            class="flex items-start flex-col overflow-scroll scrollbar-none p-4 meal-back w-full h-full absolute inset-0 bg-green-300 text-gray-900 font-bold"
-                            id="meal-back"
-                        >
-                        </div>
-                    </div>
-                </div>
-            </section>
+      <!-- meal card container -->
+      <section
+        class="flex w-full h-[30rem] **:rounded-[2rem] hidden"
+        id="mealCardContainer"
+      >
+        <div class="meal-card-wrapper w-full">
+          <div class="meal-card w-full h-full relative">
+            <div
+              class="flex items-center flex-col p-4 meal-front w-full h-full absolute inset-0 bg-blue-600 text-white font-bold"
+              id="meal-front"
+            ></div>
+            <div
+              class="flex items-start flex-col overflow-scroll scrollbar-none p-4 meal-back w-full h-full absolute inset-0 bg-green-300 text-gray-900 font-bold"
+              id="meal-back"
+            ></div>
+          </div>
+        </div>
+      </section>
 
-            <div>Saved Meals</div>
-        </main>
+      <div>Saved Meals</div>
+    </main>
 
-        <footer class="**:text-[10px]">
-            <p>&copy; 2026 My Meal Prep App. All rights reserved.</p>
-            <p>Project Contributors: Justin, John, Jack, Luke</p>
-        </footer>
-    </body>
-    <script src="./assets/JS/index.js"></script>
+    <footer class="**:text-[10px]">
+      <p>&copy; 2026 My Meal Prep App. All rights reserved.</p>
+      <p>Project Contributors: Justin, John, Jack, Luke</p>
+    </footer>
+  </body>
+  <script src="./assets/JS/index.js"></script>
 </html>
