@@ -14,6 +14,7 @@ const savedMeals = $("#savedMeals");
 const mealCard = $(".meal-card");
 const drinkFront = $("#drinkFront");
 const drinkBack = $("#drinkBack");
+const searchInput = $("#searchInput");
 
 //API Call Function for meals
 function fetchMealByName(mealURL) {
@@ -148,12 +149,12 @@ function fetchRandomCocktail() {
 findRecipeBtn.on("click", (e) => {
   e.stopPropagation();
   e.preventDefault();
-  const mealName = $("#searchInput").val();
+  const mealName = searchInput.val();
   if (mealName) {
     fetchMealByName(mealdbUrl + mealName);
     fetchRandomCocktail();
   }
-  $("#searchInput").val("");
+  searchInput.val("");
 });
 
 randomRecipeBtn.on("click", (e) => {
@@ -161,7 +162,7 @@ randomRecipeBtn.on("click", (e) => {
   e.preventDefault();
   fetchMealByName(mealdbRandomUrl);
   fetchRandomCocktail();
-  $("#searchInput").val("");
+  searchInput.val("");
 });
 
 // Add click listener for meal card flip
