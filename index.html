@@ -1,164 +1,150 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/CSS/styles.css" />
-    <title>Meal Prep App - Find and Save Your Favorite Recipes</title>
-    <script
-      src="https://code.jquery.com/jquery-4.0.0.js"
-      integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-primary: #38598b;
-        --color-secondary: #a2a8d3;
-        --color-dark: #113f67;
-        --color-background: #e7eaf6;
-        --font-tangerine: "Tangerine", cursive;
-      }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/CSS/styles.css" />
+		<title>Meal Prep App - Find and Save Your Favorite Recipes</title>
+		<script
+			src="https://code.jquery.com/jquery-4.0.0.js"
+			integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<style type="text/tailwindcss">
+			@theme {
+				--color-primary: #38598b;
+				--color-secondary: #a2a8d3;
+				--color-dark: #113f67;
+				--color-background: #e7eaf6;
+				--font-tangerine: 'Tangerine', cursive;
+			}
 
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
+			.sr-only {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0, 0, 0, 0);
+				white-space: nowrap;
+				border-width: 0;
+			}
 
-      .sr-only.focus:not-sr-only {
-        position: static;
-        width: auto;
-        height: auto;
-        overflow: visible;
-        clip: auto;
-        white-space: normal;
-        margin: 0;
-        padding: 10px 15px;
-        background-color: #38598b;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body
-    class="flex w-full flex-col items-center justify-center gap-5 bg-background p-4"
-  >
-    <a href="#main-content" class="sr-only focus:not-sr-only"
-      >Skip to main content</a
-    >
-    <header class="w-full">
-      <h1 class="text-5xl text-center font-tangerine font-bold">
-        Meal Prep App
-      </h1>
-    </header>
-    <main
-      class="flex items-center flex-col w-[80%] lg-w-[70%]"
-      id="main-content"
-    >
-      <!-- search area -->
-      <section id="search-main">
-        <h2 class="text-center text-4xl font-tangerine font-bold">
-          Find your favorite meals
-        </h2>
-        <!-- search form -->
-        <div class="flex justify-center p-5">
-          <form
-            id="mealSearchForm"
-            class="flex items-center flex-col gap-2"
-            role="search"
-          >
-            <label for="searchInput" class="sr-only">Search for recipes</label>
-            <input
-              class="form-control border p-1 rounded-2xl"
-              id="searchInput"
-              type="text"
-              placeholder="Search"
-              aria-label="Search for recipes"
-            />
-            <div>
-              <button
-                type="submit"
-                class="bg-secondary hover:opacity-50 rounded-md p-1"
-                id="findRecipeBtn"
-                aria-label="Find recipe based on search input"
-              >
-                Find Recipe
-              </button>
-              <button
-                type="button"
-                class="bg-secondary hover:opacity-50 rounded-md p-1"
-                id="randomRecipeBtn"
-                aria-label="Get a random recipe"
-              >
-                Random Recipe
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
+			.sr-only.focus:not-sr-only {
+				position: static;
+				width: auto;
+				height: auto;
+				overflow: visible;
+				clip: auto;
+				white-space: normal;
+				margin: 0;
+				padding: 10px 15px;
+				background-color: #38598b;
+				color: white;
+				text-decoration: none;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body
+		class="flex w-full flex-col items-center justify-center gap-5 bg-background p-4">
+		<a href="#main-content" class="sr-only focus:not-sr-only"
+			>Skip to main content</a
+		>
+		<header class="w-full">
+			<h1 class="text-5xl text-center font-tangerine font-bold">
+				Meal Prep App
+			</h1>
+		</header>
+		<main
+			class="flex items-center flex-col w-[80%] lg-w-[70%]"
+			id="main-content">
+			<!-- search area -->
+			<section id="search-main">
+				<h2 class="text-center text-4xl font-tangerine font-bold">
+					Find your favorite meals
+				</h2>
+				<!-- search form -->
+				<div class="flex justify-center p-5">
+					<form
+						id="mealSearchForm"
+						class="flex items-center flex-col gap-2"
+						role="search">
+						<label for="searchInput" class="sr-only"
+							>Search for recipes</label
+						>
+						<input
+							class="form-control border p-1 rounded-2xl"
+							id="searchInput"
+							type="text"
+							placeholder="Search"
+							aria-label="Search for recipes" />
+						<div>
+							<button
+								type="submit"
+								class="bg-secondary hover:opacity-50 rounded-md p-1"
+								id="findRecipeBtn"
+								aria-label="Find recipe based on search input">
+								Find Recipe
+							</button>
+							<button
+								type="button"
+								class="bg-secondary hover:opacity-50 rounded-md p-1"
+								id="randomRecipeBtn"
+								aria-label="Get a random recipe">
+								Random Recipe
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
 
-      <!-- meal card container -->
-      <section
-        class="flex flex-col sm:flex-row gap-5 w-full h-[50rem] sm:h-[23rem] **:rounded-[2rem] hidden"
-        id="mealCardContainer"
-        aria-live="polite"
-        aria-label="Recipe results"
-      >
-        <div
-          id="mealContainer"
-          class="h-full meal-card-wrapper w-full"
-          role="region"
-          aria-label="Meal Recipe Card"
-        >
-          <div class="meal-card w-full h-full relative">
-            <div
-              class="overflow-scroll scrollbar-none flex items-center flex-col gap-5 p-4 meal-front w-full h-full absolute inset-0 bg-primary text-white font-bold"
-              id="meal-front"
-              tabindex="0"
-            ></div>
-            <div
-              class="flex items-start flex-col overflow-scroll scrollbar-none p-4 meal-back w-full h-full absolute inset-0 bg-primary text-gray-900 font-bold"
-              id="meal-back"
-              tabindex="0"
-            ></div>
-          </div>
-        </div>
-        <div
-          id="cockTailContainer"
-          class="h-full meal-card-wrapper w-full"
-          role="region"
-          aria-label="Cocktail Recipe Card"
-        >
-          <div class="meal-card w-full h-full relative">
-            <div
-              class="overflow-scroll scrollbar-none flex items-center flex-col gap-5 p-4 meal-front w-full h-full absolute inset-0 bg-primary text-white font-bold"
-              id="drinkFront"
-              tabindex="0"
-            ></div>
-            <div
-              class="flex items-start flex-col overflow-scroll scrollbar-none p-4 meal-back w-full h-full absolute inset-0 bg-primary text-gray-900 font-bold"
-              id="drinkBack"
-              tabindex="0"
-            ></div>
-          </div>
-        </div>
-      </section>
+			<!-- meal card container -->
+			<section
+				class="flex flex-col sm:flex-row gap-5 w-full h-[50rem] sm:h-[23rem] **:rounded-[2rem] hidden"
+				id="mealCardContainer"
+				aria-live="polite"
+				aria-label="Recipe results">
+				<div
+					id="mealContainer"
+					class="h-full meal-card-wrapper w-full"
+					role="region"
+					aria-label="Meal Recipe Card">
+					<div class="meal-card w-full h-full relative">
+						<div
+							class="overflow-scroll scrollbar-none flex items-center flex-col gap-5 p-4 meal-front w-full h-full absolute inset-0 bg-primary text-white font-bold"
+							id="meal-front"
+							tabindex="0"></div>
+						<div
+							class="flex items-start flex-col overflow-scroll scrollbar-none p-4 meal-back w-full h-full absolute inset-0 bg-primary text-gray-900 font-bold"
+							id="meal-back"
+							tabindex="0"></div>
+					</div>
+				</div>
+				<div
+					id="cockTailContainer"
+					class="h-full meal-card-wrapper w-full"
+					role="region"
+					aria-label="Cocktail Recipe Card">
+					<div class="meal-card w-full h-full relative">
+						<div
+							class="overflow-scroll scrollbar-none flex items-center flex-col gap-5 p-4 meal-front w-full h-full absolute inset-0 bg-primary text-white font-bold"
+							id="drinkFront"
+							tabindex="0"></div>
+						<div
+							class="flex items-start flex-col overflow-scroll scrollbar-none p-4 meal-back w-full h-full absolute inset-0 bg-primary text-gray-900 font-bold"
+							id="drinkBack"
+							tabindex="0"></div>
+					</div>
+				</div>
+			</section>
+		</main>
 
-      <div class="hidden" id="savedMeals">Saved Meals</div>
-    </main>
-
-    <footer class="**:text-[10px]">
-      <p>&copy; 2026 My Meal Prep App. All rights reserved.</p>
-      <p>Project Contributors: Justin, John, Jack, Luke</p>
-    </footer>
-  </body>
-  <script src="./assets/JS/index.js"></script>
+		<footer class="**:text-[10px]">
+			<p>&copy; 2026 My Meal Prep App. All rights reserved.</p>
+			<p>Project Contributors: Justin, John, Jack, Luke</p>
+		</footer>
+	</body>
+	<script src="./assets/JS/index.js"></script>
 </html>
